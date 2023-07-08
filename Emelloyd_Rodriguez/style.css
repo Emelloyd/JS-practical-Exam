@@ -1,19 +1,24 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("Assets/background.png");
+  width: 100%;
+  overflow: hidden;
 }
 
 .container{
+    background-image: url("Assets/background.png");
+    background-size: cover;
     width: 600px;
     height: 600px;
     margin: auto;
-    border: 2px blue;
+}
+img{
+  max-width: 350px;
 }
 
 .female{
   position: absolute;
-  top: 25%;
+  top: 30%;
   left: 50%;
   margin: 100px auto;
   transform: translate(-50%, -50%);
@@ -32,19 +37,19 @@ body {
 
 .headline1{
     position: absolute;
-    top: 85%;
-    left: 50%;
+    top: 75%;
+    right: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
-    animation: slide-in 2s ease-out 1s;
+    animation: slide-in 3s ease-out 1s;
 }
 @keyframes slide-in {
     from {
-      left: -100%;
+      left: -50%;
       opacity: 1;
     }
     to {
-      left: 50%;
+      left: -50%;
       opacity: 1;
     }
   }
@@ -54,7 +59,7 @@ body {
     right: 50%;
     opacity: 0;
     transform: translate(-50%, -50%);
-    animation: slide-out 3s  ease-in-out 2s;
+    animation: slide-out 4s  ease-in-out 1s;
   }
   @keyframes slide-out {
     from {
@@ -62,12 +67,12 @@ body {
       opacity: 1;
     }
     to {
-      right: 25%;
+      right: 0%;
       opacity: 1;
     }
   }
 .subheadline {
-  top: 50%;
+  top: 30%;
   right: 50%;
   transform: translate(50%, 50%);
   opacity: 0;
@@ -119,9 +124,16 @@ body {
     opacity: 1;
   }
 }
-.replay-button {
-  animation: fade-in 9s ease-in-out 4s;
+.replay-button{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  margin: 100px auto;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: fade-in 3s ease-in-out;
 }
+
 @keyframes fade-in {
   from {
     opacity: 1;
