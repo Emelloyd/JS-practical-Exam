@@ -1,38 +1,79 @@
-window.onload = function() {
-    var femaleCharacter = document.querySelector('.female');
-    var headline1Image = document.querySelector('.headline1');
-    var headline2Image = document.querySelector('.headline2');
-    var subheadlineImage = document.querySelector('.subheadline');
-    var learnmoreImage = document.querySelector('.learnmore');
-    var logoImage = document.querySelector('.logo')
-    var replayButton = document.querySelector('.replay-button');
-  
-    femaleCharacter.classList.add("fade-in");
-    headline1Image.classList.add("slide-in");
-    headline2Image.classList.add("slide-in");
-    subheadlineImage.classList.add("fade-in");
-    learnmoreImage.classList.add("fade-in");
-    logoImage.classList.add("slide-in");
-    replayButton.classList.add("fade-in");
-  
-    replayButton.onclick = function() {
-        femaleCharacter.classList.remove("fade-in");
-        headline1Image.classList.remove("slide-in");
-        headline2Image.classList.remove("slide-in");
-        subheadlineImage.classList.remove("fade-in");
-        learnmoreImage.classList.remove("fade-in");
-        logoImage.classList.remove("slide-in");
-        replayButton.classList.remove("fade-in");
-  
-      femaleCharacter.classList.add("fade-in");
-      headline1Image.classList.add("slide-in");
-      headline2Image.classList.add("slide-in");
-      subheadlineImage.classList.add("fade-in");
-      learnmoreImage.classList.add("fade-in");
-      logoImage.classList.add("slide-in");
-      replayButton.classList.add("fade-in");
-    };
-  };
-  function reloadSite (){
+var femaleCharacter = document.querySelector('.female');
+var headline1Image = document.querySelector('.headline1');
+var headline2Image = document.querySelector('.headline2');
+var subheadlineImage = document.querySelector('.subheadline');
+var learnmoreImage = document.querySelector('.learnmore')
+var logoImage = document.querySelector('.logo');
+var replayButton = document.querySelector('.replay');
+
+
+
+
+function fadeIn(element) {
+    element.classList.remove('fade');
+    element.classList.add('show');
+}
+
+function fadeOut(element) {
+    element.classList.remove('show');
+    element.classList.add('fade');
+}
+
+function slideIn(element) {
+    element.classList.remove('slide-out');
+    element.classList.add('slide-in');
+}
+
+function slideOut(element) {
+    element.classList.remove('slide-in');
+    element.classList.add('slide-out');
+}
+
+function slideRightIn1(element) {
+    element.classList.remove('slideRightOut')
+    element.classList.add('slideRightIn')
+}
+
+function slideRightOut1(element) {
+    element.classList.remove('slideRightIn')
+    element.classList.add('slideRightOut')
+}
+
+function slideLogoIn(element) {
+    element.classList.remove('slideLogoOut')
+    element.classList.add('slideLogoIn')
+}
+
+setTimeout(function() {
+    fadeIn(femaleImage);
+
+    setTimeout(function() {
+        fadeOut(femaleImage); 
+        slideIn(headline1Image);
+
+        setTimeout(function() {
+            slideOut(headline1Image);
+            slideRightIn1(headline2Image);
+
+                setTimeout(function() {
+                    fadeIn(subheadlineImage);
+
+                    setTimeout(function() {
+                        fadeIn(learnmoreImage);
+
+                        setTimeout(function() {
+                            slideLogoIn(logoImage);
+
+                            setTimeout(function() {
+                                fadeIn(replayImage);
+                            }, 2000);
+                        }, 2000);
+                    }, 3000);
+                }, 2000);
+        }, 2000);
+    }, 2000); 
+}, 2000);
+
+function reloadSite() {
     location.reload();
-  }
+}
